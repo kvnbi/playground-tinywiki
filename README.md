@@ -25,3 +25,15 @@ I also cut a chunk out of the middle of each article and never train on it. That
 the pages.
 
 214,340 characters to train on. 29,587 held back. 90 different characters.
+
+## License
+
+The code is MIT. See LICENSE.
+
+The article text in `data/` is not mine and is not MIT. It comes from English
+Wikipedia and is licensed CC BY-SA 4.0. If you pass it on, keep it under that
+license and keep the attribution.
+
+- https://en.wikipedia.org/wiki/Artificial_intelligence
+- https://en.wikipedia.org/wiki/Manhattan_Project
+- https://en.wikipedia.org/wiki/Quantum_computing
