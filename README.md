@@ -1,6 +1,6 @@
 # playground-tinywiki
 
-I'm training a language model from scratch on three English Wikipedia articles.
+A 3.2M-parameter language model, built from scratch and trained on three English Wikipedia articles.
 
 ## Setup
 
