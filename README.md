@@ -31,6 +31,16 @@ I also cut a chunk out of the middle of each article and never train on it. That
 .venv/bin/python tokenizer.py
 ```
 
+Turns the text into numbers and saves the results to `tokenizers/`.
+
+## The model
+
+```bash
+.venv/bin/python model.py
+```
+
+A simple transformer. 3.2 million parameters.
+
 ## License
 
 The code is MIT. See LICENSE.

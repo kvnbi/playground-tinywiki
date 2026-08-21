@@ -1,1 +1,2 @@
 certifi
+torch>=2.9
