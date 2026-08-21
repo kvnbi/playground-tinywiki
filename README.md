@@ -51,6 +51,14 @@ Trains until it stops improving on the held back text, then saves the best versi
 
 Best settings I found: character level, 4 layers, 256 wide, dropout 0.3. This can gets 2.05 bits per character on held out text. The unigram baseline is 4.60.
 
+## Generating
+
+```bash
+.venv/bin/python generate.py --title "Nikola Tesla"
+```
+
+Loads the best saved model and writes an article.
+
 ## License
 
 The code is MIT. See LICENSE.
