@@ -91,6 +91,8 @@ def drop_math_residue(text):
     kept = []
     for line in text.split("\n"):
         stripped = line.strip()
+        if stripped.startswith("{" + chr(92)):
+            continue
         if (stripped
                 and not HEADING.match(line)
                 and len(stripped) <= MATH_LINE_MAX

@@ -677,37 +677,21 @@ A classical computer is a quantum computer ... so we shouldn't be asking about "
 The bit is the basic concept of classical information theory. A bit is in one of two physical states, typically denoted 0 and 1.
 The qubit is the unit of quantum information. A qubit is an abstract mathematical model that applies to any physical system that is represented by that model. When measured, a qubit takes one of two states
 
-{\displaystyle |0\rangle }
-
-{\displaystyle |1\rangle }
-
 . However, the quantum states
 
-{\displaystyle |0\rangle }
-
 and
-
-{\displaystyle |1\rangle }
 
 belong to a vector space, meaning that they can be multiplied by constants and added together, returning a valid quantum state. Such a combination is known as a superposition of
 
-{\displaystyle |0\rangle }
-
 and
-
-{\displaystyle |1\rangle }
 
 A two-dimensional vector mathematically represents a qubit state. Physicists typically use bra–ket notation for quantum mechanical linear algebra, writing
 
 psi
 
-{\displaystyle |\psi \rangle }
-
 'ket psi' for a vector labeled
 
 psi
-
-{\displaystyle \psi }
 
 . Because a qubit is a two-state system, any qubit state takes the form
 
@@ -715,37 +699,23 @@ alpha
 
 beta
 
-{\displaystyle \alpha |0\rangle +\beta |1\rangle }
-
 , where
 
-{\displaystyle |0\rangle }
-
 and
-
-{\displaystyle |1\rangle }
 
 are the standard basis states, and
 
 alpha
 
-{\displaystyle \alpha }
-
 and
 
 beta
-
-{\displaystyle \beta }
 
 are the probability amplitudes, which are in general complex numbers. If either
 
 alpha
 
-{\displaystyle \alpha }
-
 beta
-
-{\displaystyle \beta }
 
 is zero, the qubit is effectively a classical bit; when both are nonzero, the qubit is in superposition. Such a quantum state vector behaves similarly to a (classical) probability vector, with one key difference: unlike probabilities, probability amplitudes are not necessarily positive numbers. Negative amplitudes allow for destructive wave interference.
 When a qubit is measured in the standard basis, the result is a classical bit. The Born rule describes the norm-squared correspondence between amplitudes and probabilities—when measuring a qubit
@@ -754,37 +724,23 @@ alpha
 
 beta
 
-{\displaystyle \alpha |0\rangle +\beta |1\rangle }
-
 , the state collapses to
-
-{\displaystyle |0\rangle }
 
 with probability
 
 alpha
 
-{\displaystyle |\alpha |^{2}}
-
-{\displaystyle |1\rangle }
-
 with probability
 
 beta
-
-{\displaystyle |\beta |^{2}}
 
 Any valid qubit state has coefficients
 
 alpha
 
-{\displaystyle \alpha }
-
 and
 
 beta
-
-{\displaystyle \beta }
 
 such that
 
@@ -792,34 +748,18 @@ alpha
 
 beta
 
-{\displaystyle |\alpha |^{2}+|\beta |^{2}=1}
-
 . As an example, measuring the qubit
 
-{\displaystyle 1/{\sqrt {2}}|0\rangle +1/{\sqrt {2}}|1\rangle }
-
 would produce either
-
-{\displaystyle |0\rangle }
-
-{\displaystyle |1\rangle }
 
 with equal probability.
 Two particularly important superposition states are the plus state
 
-{\displaystyle |+\rangle =1/{\sqrt {2}}|0\rangle +1/{\sqrt {2}}|1\rangle }
-
 and the minus state
-
-{\displaystyle |-\rangle =1/{\sqrt {2}}|0\rangle -1/{\sqrt {2}}|1\rangle }
 
 . While both yield outcomes 0 and 1 with equal probability upon standard basis measurement, they behave differently under operations such as the Hadamard gate—which maps
 
-{\displaystyle |0\rangle \leftrightarrow |+\rangle }
-
 and
-
-{\displaystyle |1\rangle \leftrightarrow |-\rangle }
 
 —demonstrating that relative phase differences carry meaningful quantum information.
 Each additional qubit doubles the dimension of the state space. As an example, the vector 1/2|00 + 1/2|01 represents a two-qubit state, a tensor product of the qubit |0 with the qubit 1/2|0 + 1/2|1. This vector inhabits a four-dimensional vector space spanned by the basis vectors |00, |01, |10, and |11.
@@ -829,57 +769,33 @@ In general, the vector space for an n-qubit system is 2n-dimensional, and this m
 
 The state of this one-qubit quantum memory can be manipulated by applying quantum logic gates, analogous to how classical memory can be manipulated with classical logic gates. One important gate for both classical and quantum computation is the NOT gate, which can be represented by a matrix
 
-{\displaystyle X:={\begin{pmatrix}0&1\\1&0\end{pmatrix}}.}
-
 Mathematically, the application of such a logic gate to a quantum state vector is modeled with matrix multiplication. Thus
-
-{\displaystyle X|0\rangle =|1\rangle }
 
 and
 
-{\displaystyle X|1\rangle =|0\rangle }
-
 The mathematics of single-qubit gates can be extended to operate on multi-qubit quantum memories in two important ways. One way is to select a qubit and apply that gate to the target qubit while leaving the remainder of the memory unaffected. Another way is to apply the gate to its target only if another part of the memory is in a desired state. These two choices can be illustrated using another example. The possible states of a two-qubit quantum memory are:
-
-{\displaystyle |00\rangle :={\begin{pmatrix}1\\0\\0\\0\end{pmatrix}};\quad |01\rangle :={\begin{pmatrix}0\\1\\0\\0\end{pmatrix}};\quad |10\rangle :={\begin{pmatrix}0\\0\\1\\0\end{pmatrix}};\quad |11\rangle :={\begin{pmatrix}0\\0\\0\\1\end{pmatrix}}.}
 
 The controlled NOT (CNOT) gate can then be represented using the following matrix:
 
 CNOT
 
-{\displaystyle \operatorname {CNOT} :={\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}}.}
-
 As a mathematical consequence of this definition,
 
 CNOT
 
-{\textstyle \operatorname {CNOT} |00\rangle =|00\rangle }
-
 CNOT
 
-{\textstyle \operatorname {CNOT} |01\rangle =|01\rangle }
-
 CNOT
-
-{\textstyle \operatorname {CNOT} |10\rangle =|11\rangle }
 
 , and
 
 CNOT
 
-{\textstyle \operatorname {CNOT} |11\rangle =|10\rangle }
-
 . In other words, the CNOT applies a NOT gate (
-
-{\textstyle X}
 
 from before) to the second qubit if and only if the first qubit is in the state
 
-{\textstyle |1\rangle }
-
 . If the first qubit is
-
-{\textstyle |0\rangle }
 
 , nothing is done to either qubit.
 In summary, quantum computation can be described as a network of quantum logic gates and measurements. However, any measurement can be deferred to the end of quantum computation, though this deferment may come at a computational cost, so most quantum circuits depict a network consisting only of quantum logic gates and no measurements.
@@ -896,11 +812,7 @@ Various models of computation are used for quantum computing, distinguished by t
 A quantum gate array decomposes computation into a sequence of few-qubit quantum gates. A quantum computation can be described as a network of quantum logic gates and measurements. Any measurement can be deferred to the end of quantum computation, though this deferment may come at a computational cost, so most quantum circuits depict a network consisting only of quantum logic gates and no measurements.
 Any quantum computation (in the above formalism, any unitary matrix of size
 
-{\displaystyle 2^{n}\times 2^{n}}
-
 over
-
-{\displaystyle n}
 
 qubits) can be represented as a network of quantum logic gates from a fairly small family of gates. A choice of gate family that enables this construction is known as a universal gate set, since a computer that can run such circuits is a universal quantum computer. One common such set includes all single-qubit gates as well as the CNOT gate. This means any quantum computation can be performed by executing a sequence of single-qubit gates together with CNOT gates. Though this gate set is infinite, it can be replaced with a finite gate set by appealing to the Solovay-Kitaev theorem. Implementation of Boolean functions using the few-qubit quantum gates is presented here.
 
@@ -927,23 +839,25 @@ Superdense coding is the complementary protocol: using one shared e-bit and send
 
 == Algorithms ==
 
+Progress in finding quantum algorithms typically focuses on the quantum circuit model, though exceptions such as the quantum adiabatic algorithm exist. Quantum algorithms can be roughly categorized by the type of speedup achieved over corresponding classical algorithms.
+Quantum algorithms that offer more than a polynomial speedup over the best-known classical algorithm include Shor's algorithm for factoring and the related quantum algorithms for computing discrete logarithms, solving Pell's equation, and, more generally, solving the hidden subgroup problem for abelian finite groups. These algorithms depend on the primitive of the quantum Fourier transform. No mathematical proof has been found that shows that an equally fast classical algorithm cannot be discovered, but evidence suggests that this is unlikely. Certain oracle problems like Simon's problem and the Bernstein–Vazirani problem do give provable speedups, though this is in the quantum query model, which is a restricted model where lower bounds are much easier to prove and don't necessarily translate to practical problems.
+Other problems, including the simulation of quantum physical processes from chemistry and solid-state physics, the approximation of certain Jones polynomials, and the quantum algorithm for linear systems of equations, have quantum algorithms appearing to give super-polynomial speedups and are BQP-complete. Because these problems are BQP-complete, an equally fast classical algorithm for them would imply that "no quantum algorithm" provides a super-polynomial speedup, which is unlikely.
+In addition to these problems, quantum algorithms are explored for applications in cryptography, optimization, and machine learning, although most of these remain at the research stage and require significant advances in error correction and hardware scalability for practical implementation.
+Some quantum algorithms, such as Grover's algorithm and amplitude amplification, give polynomial speedups over corresponding classical algorithms. Though these algorithms give comparably modest quadratic speedup, they are widely applicable and thus accelerate a wide range of problems. These improvements are, however, over the theoretical worst-case of classical algorithms, and real-world speed-ups over traditional algorithms have not been demonstrated.
+
+=== Simulation of quantum systems ===
+
 
 
 === Search problems ===
 
 The most well-known example of a problem that allows for a polynomial quantum speedup is unstructured search, which involves finding a marked item out of a list of
 
-{\displaystyle n}
-
 items in a database. This can be solved by Grover's algorithm using
-
-{\displaystyle O({\sqrt {n}})}
 
 queries to the database, quadratically fewer than the
 
 Omega
-
-{\displaystyle \Omega (n)}
 
 queries required for classical algorithms. In this case, the advantage is not only provable but also optimal: it has been shown that Grover's algorithm gives the maximal possible probability of finding the desired element for any number of oracle lookups. Many examples of provable speedups for query problems are based on Grover's algorithm, including Brassard, Hoyer, and Tapp's algorithm for finding collisions in two-to-one functions, and Farhi, Goldstone, and Gutmann's algorithm for evaluating NAND trees.
 Problems that can be efficiently addressed with Grover's algorithm have the following properties:
@@ -1039,22 +953,14 @@ Conversely, any problem solvable by a quantum computer is also solvable by a cla
 While quantum computers cannot solve any problems that classical computers cannot already solve, it is suspected that they can solve certain problems faster than classical computers. For instance, it is known that quantum computers can efficiently factor integers, while this is not believed to be the case for classical computers.
 The class of problems that can be efficiently solved by a quantum computer with bounded error is called BQP, for "bounded error, quantum, polynomial time". More formally, BQP is the class of problems that can be solved by a polynomial-time quantum Turing machine with an error probability of at most 1/3. As a class of probabilistic problems, BQP is the quantum counterpart to BPP ("bounded error, probabilistic, polynomial time"), the class of problems that can be solved by polynomial-time probabilistic Turing machines with bounded error.
 
-{\displaystyle {\mathsf {BPP\subseteq BQP}}}
-
 but no proof demonstrates that
-
-{\displaystyle {\mathsf {BQP\neq BPP}}}
 
 , which intuitively would mean that quantum computers offer superior time complexity over classical computers.
 
 The exact relationship of BQP to P, NP, and PSPACE is not known. However, it is known that
 
-{\displaystyle {\mathsf {P\subseteq BQP\subseteq PSPACE}}}
-
 ; that is, all problems that can be efficiently solved by a classical computer can be efficiently solved by a quantum computer, and all problems that can be efficiently solved by a quantum computer can be solved by a classical computer with polynomial space resources.
 It is suspected that BQP is a strict superset of P, meaning that problems exist that are efficiently solvable by quantum computers that are not efficiently solvable by classical computers. For instance, integer factorization and the discrete logarithm problem are in BQP and are suspected to be outside of P. On the relationship of BQP to NP, little is known except that NP problems that are not in P are in BQP (integer factorization and the discrete logarithm problem are both in NP, for example). It is suspected that
-
-{\displaystyle {\mathsf {NP\nsubseteq BQP}}}
 
 ; that is, it is believed that some efficiently checkable problems are not efficiently solvable by a quantum computer. A direct consequence is that BQP is disjoint from the class of NP-complete problems (if an NP-complete problem were in BQP, then it would follow from NP-hardness that all problems in NP are in BQP).
 
