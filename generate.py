@@ -7,14 +7,15 @@ from model import Config, Transformer, pick_device
 from tokenizer import load_tokenizer
 
 ROOT = Path(__file__).resolve().parent
-CHECKPOINT_DIR = ROOT / "checkpoints"
 TOKENIZER_DIR = ROOT / "tokenizers"
 
 
-def load_checkpoint(name, device):
-    path = CHECKPOINT_DIR / f"{name}.pt"
+def load_checkpoint(path, device):
+    path = Path(path)
+    if not path.is_absolute():
+        path = ROOT / path
     if not path.exists():
-        raise SystemExit(f"no checkpoint at {path}, run train.py first")
+        raise SystemExit(f"no checkpoint at {path}")
     state = torch.load(path, map_location=device, weights_only=False)
     model = Transformer(Config(**state["config"])).to(device)
     model.load_state_dict(state["model"])
@@ -25,7 +26,7 @@ def load_checkpoint(name, device):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--checkpoint", default="char-drop0.3")
+    parser.add_argument("--checkpoint", default="weights/model.pt")
     parser.add_argument("--title", default="Quantum computing")
     parser.add_argument("--length", type=int, default=600)
     parser.add_argument("--temperature", type=float, default=0.8)

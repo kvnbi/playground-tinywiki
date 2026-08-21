@@ -64,7 +64,7 @@ def parse_args():
     parser.add_argument("--width", type=int, default=256)
     parser.add_argument("--heads", type=int, default=4)
     parser.add_argument("--block", type=int, default=256)
-    parser.add_argument("--dropout", type=float, default=0.2)
+    parser.add_argument("--dropout", type=float, default=0.3)
     parser.add_argument("--batch", type=int, default=32)
     parser.add_argument("--steps", type=int, default=1500)
     parser.add_argument("--lr", type=float, default=1e-3)

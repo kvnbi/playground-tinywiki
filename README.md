@@ -23,7 +23,7 @@ Pulled as plain text and kept the section headings. Deleted the references and e
 
 I also cut a chunk out of the middle of each article and never train on it. That's how I will tell whether the model actually learned English or just memorized the pages.
 
-214,518 characters to train on. 27,209 held back. 86 different characters.
+214,518 characters to train on. 27,209 held out. 86 different characters.
 
 ## Tokenizing
 
@@ -47,9 +47,9 @@ A simple transformer. 3.2 million parameters.
 .venv/bin/python train.py
 ```
 
-Trains until it stops improving on the held back text, then saves the best version to `checkpoints/`.
+Trains until it stops improving on the held out text, then saves the best version to `checkpoints/`.
 
-Best settings I found: character level, 4 layers, 256 wide, dropout 0.3. This can gets 2.05 bits per character on held out text. The unigram baseline is 4.60.
+Best settings I found: character level, 4 layers, 256 wide, dropout 0.3. This gets 2.05 bits per character on held out text. The unigram baseline is 4.60.
 
 ## Generating
 
@@ -57,7 +57,7 @@ Best settings I found: character level, 4 layers, 256 wide, dropout 0.3. This ca
 .venv/bin/python generate.py --title "Nikola Tesla"
 ```
 
-Loads the best saved model and writes an article.
+The trained model ships in `weights/` so this works straight after cloning.
 
 ## License
 
