@@ -41,6 +41,16 @@ Turns the text into numbers and saves the results to `tokenizers/`.
 
 A simple transformer. 3.2 million parameters.
 
+## Training
+
+```bash
+.venv/bin/python train.py
+```
+
+Trains until it stops improving on the held back text, then saves the best version to `checkpoints/`.
+
+Best settings I found: character level, 4 layers, 256 wide, dropout 0.3. This can gets 2.05 bits per character on held out text. The unigram baseline is 4.60.
+
 ## License
 
 The code is MIT. See LICENSE.
